@@ -1,8 +1,8 @@
 import { SubmitKey } from "../store/config";
-import type { LocaleType } from "./index";
+import type { PartialLocaleType } from "./index";
 
-const vi: LocaleType = {
-  WIP: "Coming Soon...",
+const vi: PartialLocaleType = {
+  WIP: "Sắp ra mắt...",
   Error: {
     Unauthorized:
       "Truy cập chưa xác thực, vui lòng nhập mã truy cập trong trang cài đặt.",
@@ -61,32 +61,20 @@ const vi: LocaleType = {
   Settings: {
     Title: "Cài đặt",
     SubTitle: "Tất cả cài đặt",
-    Actions: {
-      ClearAll: "Xóa toàn bộ dữ liệu",
-      ResetAll: "Khôi phục cài đặt gốc",
-      Close: "Đóng",
-      ConfirmResetAll: "Bạn chắc chắn muốn thiết lập lại tất cả cài đặt?",
-      ConfirmClearAll: "Bạn chắc chắn muốn thiết lập lại tất cả dữ liệu?",
-    },
+
     Lang: {
       Name: "Language", // ATTENTION: if you wanna add a new translation, please do not translate this value, leave it as `Language`
       All: "Tất cả ngôn ngữ",
-      Options: {
-        cn: "简体中文",
-        en: "English",
-        tw: "繁體中文",
-        es: "Español",
-        it: "Italiano",
-        tr: "Türkçe",
-        jp: "日本語",
-        de: "Deutsch",
-        vi: "Vietnamese",
-      },
     },
     Avatar: "Ảnh đại diện",
     FontSize: {
       Title: "Font chữ",
       SubTitle: "Thay đổi font chữ của nội dung trò chuyện",
+    },
+    InjectSystemPrompts: {
+      Title: "Tiêm Prompt Hệ thống",
+      SubTitle:
+        "Bắt buộc thêm một prompt hệ thống giả lập ChatGPT ở đầu danh sách tin nhắn cho mỗi yêu cầu",
     },
     Update: {
       Version: (x: string) => `Phiên bản: ${x}`,
@@ -104,8 +92,10 @@ const vi: LocaleType = {
       SubTitle: "Xem trước nội dung markdown bằng bong bóng",
     },
     Mask: {
-      Title: "Mask Splash Screen",
-      SubTitle: "Chớp màn hình khi bắt đầu cuộc trò chuyện mới",
+      Splash: {
+        Title: "Mask Splash Screen",
+        SubTitle: "Chớp màn hình khi bắt đầu cuộc trò chuyện mới",
+      },
     },
     Prompt: {
       Disable: {
@@ -133,11 +123,7 @@ const vi: LocaleType = {
       Title: "Ngưỡng nén lịch sử tin nhắn",
       SubTitle: "Thực hiện nén nếu số lượng tin nhắn chưa nén vượt quá ngưỡng",
     },
-    Token: {
-      Title: "API Key",
-      SubTitle: "Sử dụng khóa của bạn để bỏ qua giới hạn mã truy cập",
-      Placeholder: "OpenAI API Key",
-    },
+
     Usage: {
       Title: "Hạn mức tài khoản",
       SubTitle(used: any, total: any) {
@@ -147,11 +133,7 @@ const vi: LocaleType = {
       Check: "Kiểm tra",
       NoAccess: "Nhập API Key để kiểm tra hạn mức",
     },
-    AccessCode: {
-      Title: "Mã truy cập",
-      SubTitle: "Đã bật kiểm soát truy cập",
-      Placeholder: "Nhập mã truy cập",
-    },
+
     Model: "Mô hình",
     Temperature: {
       Title: "Tính ngẫu nhiên (temperature)",
@@ -161,9 +143,13 @@ const vi: LocaleType = {
       Title: "Giới hạn số lượng token (max_tokens)",
       SubTitle: "Số lượng token tối đa được sử dụng trong mỗi lần tương tác",
     },
-    PresencePenlty: {
+    PresencePenalty: {
       Title: "Chủ đề mới (presence_penalty)",
       SubTitle: "Giá trị càng lớn tăng khả năng mở rộng sang các chủ đề mới",
+    },
+    FrequencyPenalty: {
+      Title: "Hình phạt tần suất",
+      SubTitle: "Giá trị lớn hơn làm giảm khả năng lặp lại cùng một dòng",
     },
   },
   Store: {
@@ -191,6 +177,9 @@ const vi: LocaleType = {
   },
   Plugin: {
     Name: "Plugin",
+  },
+  FineTuned: {
+    Sysmessage: "Bạn là một trợ lý",
   },
   Mask: {
     Name: "Mẫu",
@@ -235,6 +224,12 @@ const vi: LocaleType = {
     Close: "Đóng",
     Create: "Tạo",
     Edit: "Chỉnh sửa",
+  },
+  Exporter: {
+    Model: "Mô hình",
+    Messages: "Thông điệp",
+    Topic: "Chủ đề",
+    Time: "Thời gian",
   },
 };
 
